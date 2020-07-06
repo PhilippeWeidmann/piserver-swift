@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */; };
+		3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F22124980F4100101719 /* DeviceStatusPacket.swift */; };
+		3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F2692498141E00101719 /* HomeKitServer.swift */; };
+		376494C02497D9EF0010FFDF /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 376494BF2497D9EF0010FFDF /* SQLite */; };
+		376494C22497DBEA0010FFDF /* SQLiteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376494C12497DBEA0010FFDF /* SQLiteStorage.swift */; };
+		376494C52498082C0010FFDF /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376494C42498082C0010FFDF /* Room.swift */; };
+		37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADCD54249A63AD001AAC52 /* AppResponse.swift */; };
+		37D4EC532499FF7300188627 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC522499FF7300188627 /* Logging */; };
+		37D4EC58249A578600188627 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC57249A578600188627 /* Beacon.swift */; };
+		37D4EC5A249A57DE00188627 /* HKBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC59249A57DE00188627 /* HKBeacon.swift */; };
+		37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC5B249A5C7F00188627 /* HKThermometer.swift */; };
+		37D4EC5E249A5F6C00188627 /* AppServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC5D249A5F6C00188627 /* AppServer.swift */; };
+		37D4EC61249A61B600188627 /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC60249A61B600188627 /* Kitura */; };
+		37F4F816249699B70023E80C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F815249699B70023E80C /* main.swift */; };
+		37F4F81E249699ED0023E80C /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = 37F4F81D249699ED0023E80C /* HAP */; };
+		37F4F86A24969E3F0023E80C /* DimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F86924969E3F0023E80C /* DimmableLight.swift */; };
+		37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 37F4F86C24969F800023E80C /* Kitura-WebSocket */; };
+		37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F86E24969F8E0023E80C /* DeviceServer.swift */; };
+		37F4F8712496B1E80023E80C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F8702496B1E80023E80C /* Device.swift */; };
+		37F4F8BA2496B9CE0023E80C /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F8B92496B9CE0023E80C /* Packet.swift */; };
+		37F4F8BC2496C4B70023E80C /* RegisterDevicePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F8BB2496C4B70023E80C /* RegisterDevicePacket.swift */; };
+		37F4F8BE2496CB800023E80C /* DeviceRegisteredPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F8BD2496CB800023E80C /* DeviceRegisteredPacket.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37F4F810249699B70023E80C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDimmableLight.swift; sourceTree = "<group>"; };
+		3744F22124980F4100101719 /* DeviceStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusPacket.swift; sourceTree = "<group>"; };
+		3744F2692498141E00101719 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
+		376494C12497DBEA0010FFDF /* SQLiteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStorage.swift; sourceTree = "<group>"; };
+		376494C42498082C0010FFDF /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		37ADCD54249A63AD001AAC52 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
+		37D4EC57249A578600188627 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		37D4EC59249A57DE00188627 /* HKBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBeacon.swift; sourceTree = "<group>"; };
+		37D4EC5B249A5C7F00188627 /* HKThermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKThermometer.swift; sourceTree = "<group>"; };
+		37D4EC5D249A5F6C00188627 /* AppServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServer.swift; sourceTree = "<group>"; };
+		37F4F812249699B70023E80C /* PiLights */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PiLights; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F4F815249699B70023E80C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		37F4F86824969E130023E80C /* PiLights.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiLights.entitlements; sourceTree = "<group>"; };
+		37F4F86924969E3F0023E80C /* DimmableLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmableLight.swift; sourceTree = "<group>"; };
+		37F4F86E24969F8E0023E80C /* DeviceServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceServer.swift; sourceTree = "<group>"; };
+		37F4F8702496B1E80023E80C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		37F4F8B92496B9CE0023E80C /* Packet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		37F4F8BB2496C4B70023E80C /* RegisterDevicePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDevicePacket.swift; sourceTree = "<group>"; };
+		37F4F8BD2496CB800023E80C /* DeviceRegisteredPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRegisteredPacket.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37F4F80F249699B70023E80C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376494C02497D9EF0010FFDF /* SQLite in Frameworks */,
+				37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */,
+				37D4EC532499FF7300188627 /* Logging in Frameworks */,
+				37F4F81E249699ED0023E80C /* HAP in Frameworks */,
+				37D4EC61249A61B600188627 /* Kitura in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		373EEBE124980B9200A8D7C1 /* DeviceServer */ = {
+			isa = PBXGroup;
+			children = (
+				37F4F86E24969F8E0023E80C /* DeviceServer.swift */,
+				376494C3249808050010FFDF /* Model */,
+				37F4F8B82496B9A90023E80C /* Networking */,
+				376494C12497DBEA0010FFDF /* SQLiteStorage.swift */,
+			);
+			path = DeviceServer;
+			sourceTree = "<group>";
+		};
+		3744F22024980DEF00101719 /* HomeKitServer */ = {
+			isa = PBXGroup;
+			children = (
+				373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */,
+				37D4EC5B249A5C7F00188627 /* HKThermometer.swift */,
+				37D4EC59249A57DE00188627 /* HKBeacon.swift */,
+				3744F2692498141E00101719 /* HomeKitServer.swift */,
+			);
+			path = HomeKitServer;
+			sourceTree = "<group>";
+		};
+		376494C3249808050010FFDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37F4F86924969E3F0023E80C /* DimmableLight.swift */,
+				37F4F8702496B1E80023E80C /* Device.swift */,
+				376494C42498082C0010FFDF /* Room.swift */,
+				37D4EC57249A578600188627 /* Beacon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		376B3A39249C08D000F4A77B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37DEBF37249AA3FA00BE520F /* AppServer */ = {
+			isa = PBXGroup;
+			children = (
+				37ADCD54249A63AD001AAC52 /* AppResponse.swift */,
+				37D4EC5D249A5F6C00188627 /* AppServer.swift */,
+			);
+			path = AppServer;
+			sourceTree = "<group>";
+		};
+		37F4F809249699B70023E80C = {
+			isa = PBXGroup;
+			children = (
+				37F4F814249699B70023E80C /* PiLights */,
+				37F4F813249699B70023E80C /* Products */,
+				376B3A39249C08D000F4A77B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37F4F813249699B70023E80C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37F4F812249699B70023E80C /* PiLights */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F4F814249699B70023E80C /* PiLights */ = {
+			isa = PBXGroup;
+			children = (
+				37F4F86824969E130023E80C /* PiLights.entitlements */,
+				37F4F815249699B70023E80C /* main.swift */,
+				37DEBF37249AA3FA00BE520F /* AppServer */,
+				3744F22024980DEF00101719 /* HomeKitServer */,
+				373EEBE124980B9200A8D7C1 /* DeviceServer */,
+			);
+			path = PiLights;
+			sourceTree = "<group>";
+		};
+		37F4F8B82496B9A90023E80C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				37F4F8B92496B9CE0023E80C /* Packet.swift */,
+				37F4F8BB2496C4B70023E80C /* RegisterDevicePacket.swift */,
+				37F4F8BD2496CB800023E80C /* DeviceRegisteredPacket.swift */,
+				3744F22124980F4100101719 /* DeviceStatusPacket.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37F4F811249699B70023E80C /* PiLights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F4F819249699B70023E80C /* Build configuration list for PBXNativeTarget "PiLights" */;
+			buildPhases = (
+				37F4F80E249699B70023E80C /* Sources */,
+				37F4F80F249699B70023E80C /* Frameworks */,
+				37F4F810249699B70023E80C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PiLights;
+			packageProductDependencies = (
+				37F4F81D249699ED0023E80C /* HAP */,
+				37F4F86C24969F800023E80C /* Kitura-WebSocket */,
+				376494BF2497D9EF0010FFDF /* SQLite */,
+				37D4EC522499FF7300188627 /* Logging */,
+				37D4EC60249A61B600188627 /* Kitura */,
+			);
+			productName = PiLights;
+			productReference = 37F4F812249699B70023E80C /* PiLights */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37F4F80A249699B70023E80C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Philippe Weidmann";
+				TargetAttributes = {
+					37F4F811249699B70023E80C = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 37F4F80D249699B70023E80C /* Build configuration list for PBXProject "PiLights" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37F4F809249699B70023E80C;
+			packageReferences = (
+				37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */,
+				37F4F86B24969F800023E80C /* XCRemoteSwiftPackageReference "Kitura-WebSocket" */,
+				376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */,
+				37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */,
+				37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */,
+			);
+			productRefGroup = 37F4F813249699B70023E80C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37F4F811249699B70023E80C /* PiLights */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37F4F80E249699B70023E80C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F4F816249699B70023E80C /* main.swift in Sources */,
+				3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */,
+				37D4EC5E249A5F6C00188627 /* AppServer.swift in Sources */,
+				37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */,
+				37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */,
+				37F4F8BA2496B9CE0023E80C /* Packet.swift in Sources */,
+				37F4F86A24969E3F0023E80C /* DimmableLight.swift in Sources */,
+				37F4F8BE2496CB800023E80C /* DeviceRegisteredPacket.swift in Sources */,
+				37D4EC5A249A57DE00188627 /* HKBeacon.swift in Sources */,
+				37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */,
+				37D4EC58249A578600188627 /* Beacon.swift in Sources */,
+				376494C52498082C0010FFDF /* Room.swift in Sources */,
+				373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */,
+				376494C22497DBEA0010FFDF /* SQLiteStorage.swift in Sources */,
+				37F4F8BC2496C4B70023E80C /* RegisterDevicePacket.swift in Sources */,
+				3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */,
+				37F4F8712496B1E80023E80C /* Device.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		37F4F817249699B70023E80C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37F4F818249699B70023E80C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		37F4F81A249699B70023E80C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = PiLights/PiLights.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLT48TREY;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		37F4F81B249699B70023E80C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = PiLights/PiLights.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CZLT48TREY;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37F4F80D249699B70023E80C /* Build configuration list for PBXProject "PiLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F4F817249699B70023E80C /* Debug */,
+				37F4F818249699B70023E80C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F4F819249699B70023E80C /* Build configuration list for PBXNativeTarget "PiLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F4F81A249699B70023E80C /* Debug */,
+				37F4F81B249699B70023E80C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
+		37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ibm-swift/kitura";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bouke/HAP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+		37F4F86B24969F800023E80C /* XCRemoteSwiftPackageReference "Kitura-WebSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Kitura-WebSocket.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		376494BF2497D9EF0010FFDF /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		37D4EC522499FF7300188627 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		37D4EC60249A61B600188627 /* Kitura */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */;
+			productName = Kitura;
+		};
+		37F4F81D249699ED0023E80C /* HAP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */;
+			productName = HAP;
+		};
+		37F4F86C24969F800023E80C /* Kitura-WebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37F4F86B24969F800023E80C /* XCRemoteSwiftPackageReference "Kitura-WebSocket" */;
+			productName = "Kitura-WebSocket";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 37F4F80A249699B70023E80C /* Project object */;
+}
