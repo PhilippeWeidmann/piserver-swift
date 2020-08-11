@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kitura
 import KituraNet
 import KituraWebSocket
 import Logging

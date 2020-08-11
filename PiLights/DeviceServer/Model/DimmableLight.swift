@@ -52,4 +52,17 @@ class DimmableLight: Device {
         value = percent
         self.sendUpdatePacket()
     }
+    
+    override func toGoogleHomeSyncDevice() -> SyncDevice {
+        let device = super.toGoogleHomeSyncDevice()
+        device.traits = ["action.devices.traits.OnOff", "action.devices.traits.Brightness"]
+        return device
+    }
+    
+    override func toGoogleHomeQueryDevice() -> QueryDevice {
+        let device = super.toGoogleHomeQueryDevice()
+        device.on = value > 0
+        device.brightness = value
+        return device
+    }
 }

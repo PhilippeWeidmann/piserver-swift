@@ -9,6 +9,7 @@
 import Foundation
 import HAP
 import Logging
+import Kitura
 
 let logger = Logger(label: "ch.Pilights")
 var keepRunning = true
@@ -29,10 +30,14 @@ homeKitServerThread.async {
 
 DeviceServer.instance.startServer()
 
-let appServerThread = DispatchQueue(label: "AppServer", attributes: .concurrent)
 
-appServerThread.async {
-    let _ = AppServer()
+let appServer = AppServer()
+let googleHomeServer = GoogleHomeServer()
+
+let webServerThread = DispatchQueue(label: "WebServer", attributes: .concurrent)
+
+webServerThread.async {
+    Kitura.run()
 }
 
 signal(SIGINT) { _ in stop() }

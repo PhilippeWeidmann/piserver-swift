@@ -39,7 +39,6 @@ class AppServer {
         }
 
         router.get("/devices") { request, response, next in
-            print(DeviceServer.instance.devices)
             let appResponse = AppResponse<[Device]>(status: "ok", message: "", data: DeviceServer.instance.devices)
             response.send(appResponse)
             next()
@@ -90,7 +89,6 @@ class AppServer {
 
         logger.info("AppServer starting")
         Kitura.addHTTPServer(onPort: 10068, with: router)
-        Kitura.run()
     }
 
 

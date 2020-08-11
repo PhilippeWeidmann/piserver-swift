@@ -10,15 +10,27 @@
 		373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */; };
 		3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F22124980F4100101719 /* DeviceStatusPacket.swift */; };
 		3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F2692498141E00101719 /* HomeKitServer.swift */; };
+		3762D02B24E19E2300DD48B1 /* IntentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3762D02A24E19E2300DD48B1 /* IntentBody.swift */; };
+		3762D02E24E19E8300DD48B1 /* InputBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3762D02D24E19E8300DD48B1 /* InputBody.swift */; };
 		376494C02497D9EF0010FFDF /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 376494BF2497D9EF0010FFDF /* SQLite */; };
 		376494C22497DBEA0010FFDF /* SQLiteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376494C12497DBEA0010FFDF /* SQLiteStorage.swift */; };
 		376494C52498082C0010FFDF /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376494C42498082C0010FFDF /* Room.swift */; };
+		376BAA7E24E32C4800954E2E /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376BAA7D24E32C4800954E2E /* Thermometer.swift */; };
+		3770C2FC24DFFCC8004C98E7 /* GoogleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C2FB24DFFCC8004C98E7 /* GoogleResponse.swift */; };
+		3770C2FE24DFFDBE004C98E7 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C2FD24DFFDBE004C98E7 /* QueryResponse.swift */; };
+		3770C30024E0006C004C98E7 /* QueryDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C2FF24E0006C004C98E7 /* QueryDevice.swift */; };
+		3770C30224E00121004C98E7 /* SyncResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30124E00121004C98E7 /* SyncResponse.swift */; };
+		3770C30424E001D9004C98E7 /* SyncDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30324E001D9004C98E7 /* SyncDevice.swift */; };
+		3770C30624E0049C004C98E7 /* ExecuteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30524E0049C004C98E7 /* ExecuteResponse.swift */; };
+		3770C30824E004D1004C98E7 /* ExecuteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30724E004D1004C98E7 /* ExecuteCommand.swift */; };
+		3770C30B24E006A4004C98E7 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 3770C30A24E006A4004C98E7 /* AnyCodable */; };
+		3770C30D24E058F2004C98E7 /* AppServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30C24E058F2004C98E7 /* AppServer.swift */; };
+		3770C30F24E0592B004C98E7 /* GoogleHomeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30E24E0592B004C98E7 /* GoogleHomeServer.swift */; };
 		37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADCD54249A63AD001AAC52 /* AppResponse.swift */; };
 		37D4EC532499FF7300188627 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC522499FF7300188627 /* Logging */; };
 		37D4EC58249A578600188627 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC57249A578600188627 /* Beacon.swift */; };
 		37D4EC5A249A57DE00188627 /* HKBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC59249A57DE00188627 /* HKBeacon.swift */; };
 		37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC5B249A5C7F00188627 /* HKThermometer.swift */; };
-		37D4EC5E249A5F6C00188627 /* AppServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC5D249A5F6C00188627 /* AppServer.swift */; };
 		37D4EC61249A61B600188627 /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC60249A61B600188627 /* Kitura */; };
 		37F4F816249699B70023E80C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F815249699B70023E80C /* main.swift */; };
 		37F4F81E249699ED0023E80C /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = 37F4F81D249699ED0023E80C /* HAP */; };
@@ -47,13 +59,24 @@
 		373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDimmableLight.swift; sourceTree = "<group>"; };
 		3744F22124980F4100101719 /* DeviceStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusPacket.swift; sourceTree = "<group>"; };
 		3744F2692498141E00101719 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
+		3762D02A24E19E2300DD48B1 /* IntentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentBody.swift; sourceTree = "<group>"; };
+		3762D02D24E19E8300DD48B1 /* InputBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBody.swift; sourceTree = "<group>"; };
 		376494C12497DBEA0010FFDF /* SQLiteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStorage.swift; sourceTree = "<group>"; };
 		376494C42498082C0010FFDF /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		376BAA7D24E32C4800954E2E /* Thermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thermometer.swift; sourceTree = "<group>"; };
+		3770C2FB24DFFCC8004C98E7 /* GoogleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleResponse.swift; sourceTree = "<group>"; };
+		3770C2FD24DFFDBE004C98E7 /* QueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResponse.swift; sourceTree = "<group>"; };
+		3770C2FF24E0006C004C98E7 /* QueryDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryDevice.swift; sourceTree = "<group>"; };
+		3770C30124E00121004C98E7 /* SyncResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncResponse.swift; sourceTree = "<group>"; };
+		3770C30324E001D9004C98E7 /* SyncDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDevice.swift; sourceTree = "<group>"; };
+		3770C30524E0049C004C98E7 /* ExecuteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteResponse.swift; sourceTree = "<group>"; };
+		3770C30724E004D1004C98E7 /* ExecuteCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteCommand.swift; sourceTree = "<group>"; };
+		3770C30C24E058F2004C98E7 /* AppServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppServer.swift; path = PiLights/AppServer/AppServer.swift; sourceTree = SOURCE_ROOT; };
+		3770C30E24E0592B004C98E7 /* GoogleHomeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHomeServer.swift; sourceTree = "<group>"; };
 		37ADCD54249A63AD001AAC52 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		37D4EC57249A578600188627 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		37D4EC59249A57DE00188627 /* HKBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBeacon.swift; sourceTree = "<group>"; };
 		37D4EC5B249A5C7F00188627 /* HKThermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKThermometer.swift; sourceTree = "<group>"; };
-		37D4EC5D249A5F6C00188627 /* AppServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServer.swift; sourceTree = "<group>"; };
 		37F4F812249699B70023E80C /* PiLights */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PiLights; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F4F815249699B70023E80C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		37F4F86824969E130023E80C /* PiLights.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiLights.entitlements; sourceTree = "<group>"; };
@@ -74,6 +97,7 @@
 				37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */,
 				37D4EC532499FF7300188627 /* Logging in Frameworks */,
 				37F4F81E249699ED0023E80C /* HAP in Frameworks */,
+				3770C30B24E006A4004C98E7 /* AnyCodable in Frameworks */,
 				37D4EC61249A61B600188627 /* Kitura in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +127,15 @@
 			path = HomeKitServer;
 			sourceTree = "<group>";
 		};
+		3762D02C24E19E6D00DD48B1 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				3762D02A24E19E2300DD48B1 /* IntentBody.swift */,
+				3762D02D24E19E8300DD48B1 /* InputBody.swift */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
 		376494C3249808050010FFDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +143,7 @@
 				37F4F8702496B1E80023E80C /* Device.swift */,
 				376494C42498082C0010FFDF /* Room.swift */,
 				37D4EC57249A578600188627 /* Beacon.swift */,
+				376BAA7D24E32C4800954E2E /* Thermometer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,11 +155,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3770C2FA24DFFCB6004C98E7 /* GoogleHomeServer */ = {
+			isa = PBXGroup;
+			children = (
+				3770C30E24E0592B004C98E7 /* GoogleHomeServer.swift */,
+				3762D02C24E19E6D00DD48B1 /* Intent */,
+				3770C2FB24DFFCC8004C98E7 /* GoogleResponse.swift */,
+				3770C2FD24DFFDBE004C98E7 /* QueryResponse.swift */,
+				3770C30124E00121004C98E7 /* SyncResponse.swift */,
+				3770C30324E001D9004C98E7 /* SyncDevice.swift */,
+				3770C30524E0049C004C98E7 /* ExecuteResponse.swift */,
+				3770C30724E004D1004C98E7 /* ExecuteCommand.swift */,
+				3770C2FF24E0006C004C98E7 /* QueryDevice.swift */,
+			);
+			path = GoogleHomeServer;
+			sourceTree = "<group>";
+		};
 		37DEBF37249AA3FA00BE520F /* AppServer */ = {
 			isa = PBXGroup;
 			children = (
 				37ADCD54249A63AD001AAC52 /* AppResponse.swift */,
-				37D4EC5D249A5F6C00188627 /* AppServer.swift */,
+				3770C30C24E058F2004C98E7 /* AppServer.swift */,
 			);
 			path = AppServer;
 			sourceTree = "<group>";
@@ -152,6 +202,7 @@
 			children = (
 				37F4F86824969E130023E80C /* PiLights.entitlements */,
 				37F4F815249699B70023E80C /* main.swift */,
+				3770C2FA24DFFCB6004C98E7 /* GoogleHomeServer */,
 				37DEBF37249AA3FA00BE520F /* AppServer */,
 				3744F22024980DEF00101719 /* HomeKitServer */,
 				373EEBE124980B9200A8D7C1 /* DeviceServer */,
@@ -192,6 +243,7 @@
 				376494BF2497D9EF0010FFDF /* SQLite */,
 				37D4EC522499FF7300188627 /* Logging */,
 				37D4EC60249A61B600188627 /* Kitura */,
+				3770C30A24E006A4004C98E7 /* AnyCodable */,
 			);
 			productName = PiLights;
 			productReference = 37F4F812249699B70023E80C /* PiLights */;
@@ -227,6 +279,7 @@
 				376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */,
 				37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */,
 				37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */,
+				3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */,
 			);
 			productRefGroup = 37F4F813249699B70023E80C /* Products */;
 			projectDirPath = "";
@@ -242,23 +295,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376BAA7E24E32C4800954E2E /* Thermometer.swift in Sources */,
 				37F4F816249699B70023E80C /* main.swift in Sources */,
+				3770C30824E004D1004C98E7 /* ExecuteCommand.swift in Sources */,
 				3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */,
-				37D4EC5E249A5F6C00188627 /* AppServer.swift in Sources */,
+				3770C30224E00121004C98E7 /* SyncResponse.swift in Sources */,
 				37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */,
 				37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */,
 				37F4F8BA2496B9CE0023E80C /* Packet.swift in Sources */,
+				3770C30024E0006C004C98E7 /* QueryDevice.swift in Sources */,
+				3770C30D24E058F2004C98E7 /* AppServer.swift in Sources */,
+				3770C30F24E0592B004C98E7 /* GoogleHomeServer.swift in Sources */,
 				37F4F86A24969E3F0023E80C /* DimmableLight.swift in Sources */,
+				3770C30624E0049C004C98E7 /* ExecuteResponse.swift in Sources */,
+				3770C2FC24DFFCC8004C98E7 /* GoogleResponse.swift in Sources */,
 				37F4F8BE2496CB800023E80C /* DeviceRegisteredPacket.swift in Sources */,
 				37D4EC5A249A57DE00188627 /* HKBeacon.swift in Sources */,
 				37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */,
 				37D4EC58249A578600188627 /* Beacon.swift in Sources */,
+				3762D02E24E19E8300DD48B1 /* InputBody.swift in Sources */,
 				376494C52498082C0010FFDF /* Room.swift in Sources */,
 				373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */,
 				376494C22497DBEA0010FFDF /* SQLiteStorage.swift in Sources */,
 				37F4F8BC2496C4B70023E80C /* RegisterDevicePacket.swift in Sources */,
 				3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */,
 				37F4F8712496B1E80023E80C /* Device.swift in Sources */,
+				3762D02B24E19E2300DD48B1 /* IntentBody.swift in Sources */,
+				3770C30424E001D9004C98E7 /* SyncDevice.swift in Sources */,
+				3770C2FE24DFFDBE004C98E7 /* QueryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +503,14 @@
 				minimumVersion = 0.12.2;
 			};
 		};
+		3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flight-School/AnyCodable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log/";
@@ -478,6 +550,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		3770C30A24E006A4004C98E7 /* AnyCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */;
+			productName = AnyCodable;
 		};
 		37D4EC522499FF7300188627 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;

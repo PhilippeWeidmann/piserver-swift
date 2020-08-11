@@ -34,4 +34,15 @@ class Beacon: Device {
         )
     }
 
+    override func toGoogleHomeSyncDevice() -> SyncDevice {
+        let device = super.toGoogleHomeSyncDevice()
+        device.traits = ["action.devices.traits.SensorState"]
+        return device
+    }
+    
+    override func toGoogleHomeQueryDevice() -> QueryDevice {
+        let device = super.toGoogleHomeQueryDevice()
+        device.thermostatTemperatureAmbient = value
+        return device
+    }
 }
