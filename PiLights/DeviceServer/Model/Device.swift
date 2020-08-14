@@ -10,6 +10,10 @@ import Foundation
 import KituraNet
 import KituraWebSocket
 
+public protocol DeviceUpdatedDelegate {
+    func didUpdateValue(_ newValue: Int)
+}
+
 public enum DeviceType: String, Codable {
     case dimmableLight
     case beacon
@@ -32,8 +36,13 @@ class Device: Codable, Equatable {
     var id: Int
     var name: String
     var type: DeviceType
-    var value: Int
+    var value: Int {
+        didSet {
+            delegate?.didUpdateValue(value)
+        }
+    }
     var roomId: Int
+    var delegate: DeviceUpdatedDelegate?
 
     enum CodingKeys: CodingKey {
         case id
@@ -54,7 +63,7 @@ class Device: Codable, Equatable {
     public func sendUpdatePacket() {
         logger.debug("Update packet value: \(value) for device: \(id)")
         if let connection = connection {
-            try? DeviceServer.sendPacket(Packet(type: .DEVICE_STATUS_PACKET, data: DeviceStatusPacket(deviceId: self.id, deviceValue: "\(self.value)")), to: connection)
+            try? DeviceServer.sendPacket(Packet(type: .DEVICE_STATUS_PACKET, data: DeviceStatusPacket(deviceId: self.id, deviceValue: self.value)), to: connection)
         }
     }
 

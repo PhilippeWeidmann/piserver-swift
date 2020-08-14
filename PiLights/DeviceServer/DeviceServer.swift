@@ -25,8 +25,7 @@ class DeviceServer: WebSocketService {
 
     var devices = [Device]()
     var rooms = [Room]()
-
-
+ 
     private init() {
         rooms = SQLiteStorage.instance.getRooms()
         devices = SQLiteStorage.instance.getDevices()
@@ -54,7 +53,6 @@ class DeviceServer: WebSocketService {
             }
         }
     }
-
 
     public func connected(connection: WebSocketConnection) {
         connections[connection.id] = connection
@@ -118,9 +116,27 @@ class DeviceServer: WebSocketService {
                         }
                         logger.info("Registering new device \(newDevice.id)")
                         SQLiteStorage.instance.addDevice(newDevice)
+                    } else if registerDevicePacket.data.deviceType == "thermometer" {
+                        let newDevice = Thermometer(id: registerDevicePacket.data.deviceId, name: "Thermometer", value: 20, roomId: 1)
+                        resultPacket.result = "ok"
+                        newDevice.connection = from
+
+                        devices.append(newDevice)
+                        if let room = getRoomWith(id: newDevice.roomId) {
+                            room.addDevice(newDevice)
+                        }
+                        logger.info("Registering new device \(newDevice.id)")
+                        SQLiteStorage.instance.addDevice(newDevice)
                     }
                 }
                 try DeviceServer.sendPacket(Packet(type: .DEVICE_REGISTERED_PACKET, data: resultPacket), to: from)
+                break
+            case .DEVICE_STATUS_PACKET:
+                let deviceStatusPacket = try jsonDecoder.decode(Packet<DeviceStatusPacket>.self, from: message.data(using: .utf8)!)
+
+                if let thermometer = getDeviceWith(id: deviceStatusPacket.data.deviceId) as? Thermometer {
+                    thermometer.value = deviceStatusPacket.data.deviceValue
+                }
                 break
             default:
                 self.closeConnection(from)

@@ -11,7 +11,7 @@ import Kitura
 import AnyCodable
 
 class GoogleHomeServer {
-
+    //https://developers.google.com/assistant/smarthome/traits/
     let deviceServer = DeviceServer.instance
     let router = Router()
 

@@ -9,9 +9,18 @@
 import Foundation
 import HAP
 
-class HKThermometer: HAP.Accessory.Thermometer {
-    
-    init() {
-        super.init(info: .init(name: "", serialNumber: ""))
+class HKThermometer: HAP.Accessory.Thermometer, DeviceUpdatedDelegate {
+    private let thermometer: PiLights.Thermometer
+
+    init(thermometer: PiLights.Thermometer) {
+        self.thermometer = thermometer
+        super.init(info: .init(name: thermometer.name, serialNumber: "\(thermometer.id)"))
+        self.thermometer.delegate = self
+        self.temperatureSensor.currentTemperature.value = Float(thermometer.value)
     }
+
+    func didUpdateValue(_ newValue: Int) {
+        self.temperatureSensor.currentTemperature.value = Float(thermometer.value)
+    }
+
 }

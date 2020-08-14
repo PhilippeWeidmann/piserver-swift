@@ -14,7 +14,7 @@ class HKBeacon: Accessory {
     init(beacon: Beacon) {
         super.init(info: .init(name: beacon.name, serialNumber: "\(beacon.id)"), type: .sensor, services: [service])
     }
-    
+
 }
 
 class BeaconService: Service {
@@ -27,5 +27,4 @@ class BeaconService: Service {
             AnyCharacteristic(occupancy)
             ])
     }
-
 }

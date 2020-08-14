@@ -9,7 +9,7 @@
 import Foundation
 import HAP
 
-class HKDimmableLight: HAP.Accessory.Lightbulb {
+class HKDimmableLight: HAP.Accessory.Lightbulb, DeviceUpdatedDelegate {
     
     private let light: DimmableLight
     
@@ -17,12 +17,13 @@ class HKDimmableLight: HAP.Accessory.Lightbulb {
         self.light = light
         super.init(info: .init(name: light.name, serialNumber: "\(light.id)"), additionalServices: [], type: .monochrome, isDimmable: true)
         self.reachable = true
-        self.updateValues()
+        self.light.delegate = self
+        self.didUpdateValue(self.light.value)
     }
     
-    func updateValues() {
-        self.lightbulb.powerState.value = light.value != 0
-        self.lightbulb.brightness?.value = light.value
+    func didUpdateValue(_ newValue: Int) {
+        self.lightbulb.powerState.value = newValue != 0
+        self.lightbulb.brightness?.value = newValue
     }
 
     override func characteristic<T>(_ characteristic: GenericCharacteristic<T>, ofService service: Service, didChangeValue newValue: T?) where T: CharacteristicValueType {

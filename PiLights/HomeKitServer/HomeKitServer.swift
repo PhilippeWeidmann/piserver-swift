@@ -34,6 +34,8 @@ class HomeKitServer {
             bridge.addAccessories([HKDimmableLight(light: device as! DimmableLight)])
         } else if device.type == .beacon {
             bridge.addAccessories([HKBeacon(beacon: device as! Beacon)])
+        } else if device.type == .thermometer {
+            bridge.addAccessories([HKThermometer(thermometer: device as! Thermometer)])
         }
     }
     
