@@ -24,11 +24,12 @@ class AppServer {
         }
 
         router.post("/rooms") { request, response, next in
-            let appResponse = AppResponse<[Room]>(status: "ok", message: "", data: nil)
+            let appResponse = AppResponse<Room>(status: "ok", message: "", data: nil)
             if let body = request.body?.asURLEncoded,
                 let newRoomName = self.getValueForPostBody(name: "roomName", body: body),
                 let room = SQLiteStorage.instance.addRoom(Room(id: -1, name: newRoomName)) {
                 self.deviceServer.rooms.append(room)
+                appResponse.data = room
             } else {
                 response.statusCode = HTTPStatusCode.badRequest
                 appResponse.status = "error"
