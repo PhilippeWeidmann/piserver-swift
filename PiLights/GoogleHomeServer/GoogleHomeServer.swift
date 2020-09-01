@@ -119,7 +119,13 @@ class GoogleHomeServer {
                                             dimmableLight.switchLight(on: on)
                                             execCommand.states["on"] = AnyCodable(dimmableLight.value == 0)
                                         }
+                                    } else if let light = device as? Light {
+                                        if let on = exec.params["on"]?.value as? Bool {
+                                            light.switchLight(on: on)
+                                            execCommand.states["on"] = AnyCodable(light.value == 0)
+                                        }
                                     }
+                                    
                                 }
                             }
                         }

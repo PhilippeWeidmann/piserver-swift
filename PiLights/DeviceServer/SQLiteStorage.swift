@@ -79,6 +79,8 @@ class SQLiteStorage {
                     devices.append(Beacon(row: row))
                 } else if ((row[2] as! String) == DeviceType.thermometer.rawValue){
                     devices.append(Thermometer(row: row))
+                } else if ((row[2] as! String) == DeviceType.light.rawValue){
+                    devices.append(Light(row: row))
                 }
             }
         } catch {

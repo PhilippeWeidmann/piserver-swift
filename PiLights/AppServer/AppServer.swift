@@ -69,6 +69,8 @@ class AppServer {
                     let newValue = Int(stringNewValue) {
                     if let dimmableLight = device as? DimmableLight {
                         dimmableLight.setDim(percent: newValue)
+                    } else if let light = device as? Light {
+                        light.switchLight(on: newValue > 0)
                     } else {
                         device.value = newValue
                     }
@@ -93,7 +95,7 @@ class AppServer {
     }
 
 
-    func getValueForPostBody(name: String, body: [String : String]) -> String? {
+    func getValueForPostBody(name: String, body: [String: String]) -> String? {
         return body[name]
     }
 }

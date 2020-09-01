@@ -25,7 +25,7 @@ class DeviceServer: WebSocketService {
 
     var devices = [Device]()
     var rooms = [Room]()
- 
+
     private init() {
         rooms = SQLiteStorage.instance.getRooms()
         devices = SQLiteStorage.instance.getDevices()
@@ -94,30 +94,18 @@ class DeviceServer: WebSocketService {
                     resultPacket.result = "ok"
                     newDevice.connection = from
                 } else {
+                    var newDevice: Device! = nil
                     if registerDevicePacket.data.deviceType == "dimmable" {
-                        let newDevice = DimmableLight(id: registerDevicePacket.data.deviceId, name: "Dimmable Light", value: 0, roomId: 1)
-                        resultPacket.result = "ok"
-                        newDevice.connection = from
-
-                        devices.append(newDevice)
-                        if let room = getRoomWith(id: newDevice.roomId) {
-                            room.addDevice(newDevice)
-                        }
-                        logger.info("Registering new device \(newDevice.id)")
-                        SQLiteStorage.instance.addDevice(newDevice)
+                        newDevice = DimmableLight(id: registerDevicePacket.data.deviceId, name: "Dimmable Light", value: 0, roomId: 1)
                     } else if registerDevicePacket.data.deviceType == "beacon" {
-                        let newDevice = Beacon(id: registerDevicePacket.data.deviceId, name: "Beacon", value: registerDevicePacket.data.deviceValue ?? 0, roomId: 1)
-                        resultPacket.result = "ok"
-                        newDevice.connection = from
-
-                        devices.append(newDevice)
-                        if let room = getRoomWith(id: newDevice.roomId) {
-                            room.addDevice(newDevice)
-                        }
-                        logger.info("Registering new device \(newDevice.id)")
-                        SQLiteStorage.instance.addDevice(newDevice)
+                        newDevice = Beacon(id: registerDevicePacket.data.deviceId, name: "Beacon", value: registerDevicePacket.data.deviceValue ?? 0, roomId: 1)
                     } else if registerDevicePacket.data.deviceType == "thermometer" {
-                        let newDevice = Thermometer(id: registerDevicePacket.data.deviceId, name: "Thermometer", value: 20, roomId: 1)
+                        newDevice = Thermometer(id: registerDevicePacket.data.deviceId, name: "Thermometer", value: 20, roomId: 1)
+                    } else if registerDevicePacket.data.deviceType == "light" {
+                        newDevice = Light(id: registerDevicePacket.data.deviceId, name: "Light", value: 0, roomId: 1)
+                    }
+                    
+                    if newDevice != nil {
                         resultPacket.result = "ok"
                         newDevice.connection = from
 
