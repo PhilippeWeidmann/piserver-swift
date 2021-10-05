@@ -8,7 +8,7 @@
 
 import Foundation
 
-class QueryDevice : Codable {
+class QueryDevice: Codable {
     var online: Bool = true
     var on: Bool?
     var brightness: Int?

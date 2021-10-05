@@ -10,7 +10,6 @@ import Foundation
 import SQLite
 
 class Light: Device {
-
     init(id: Int, name: String, value: Int, roomId: Int) {
         super.init(id: id, name: name, type: .light, value: value, roomId: roomId)
     }
@@ -38,13 +37,13 @@ class Light: Device {
         value = on ? 1 : 0
         self.sendUpdatePacket()
     }
-    
+
     override func toGoogleHomeSyncDevice() -> SyncDevice {
         let device = super.toGoogleHomeSyncDevice()
         device.traits = ["action.devices.traits.OnOff"]
         return device
     }
-    
+
     override func toGoogleHomeQueryDevice() -> QueryDevice {
         let device = super.toGoogleHomeQueryDevice()
         device.on = value > 0

@@ -22,20 +22,18 @@ public enum DeviceType: String, Codable {
     case co2Sensor
 
     var googleValue: String {
-        get {
-            let values = [
-                DeviceType.dimmableLight: "action.devices.types.LIGHT",
-                DeviceType.light: "action.devices.types.LIGHT",
-                DeviceType.beacon: "action.devices.types.THERMOSTAT",
-                DeviceType.thermometer: "action.devices.types.THERMOSTAT",
-                DeviceType.co2Sensor: "action.devices.types.THERMOSTAT"]
-            return values[self]!
-        }
+        let values = [
+            DeviceType.dimmableLight: "action.devices.types.LIGHT",
+            DeviceType.light: "action.devices.types.LIGHT",
+            DeviceType.beacon: "action.devices.types.THERMOSTAT",
+            DeviceType.thermometer: "action.devices.types.THERMOSTAT",
+            DeviceType.co2Sensor: "action.devices.types.THERMOSTAT",
+        ]
+        return values[self]!
     }
 }
 
 class Device: Codable, Equatable {
-
     var connection: WebSocketConnection?
     var id: Int
     var name: String
@@ -45,6 +43,7 @@ class Device: Codable, Equatable {
             delegate?.didUpdateValue(value)
         }
     }
+
     var roomId: Int
     var delegate: DeviceUpdatedDelegate?
 
@@ -67,7 +66,7 @@ class Device: Codable, Equatable {
     public func sendUpdatePacket() {
         logger.debug("Update packet value: \(value) for device: \(id)")
         if let connection = connection {
-            try? DeviceServer.sendPacket(Packet(type: .DEVICE_STATUS_PACKET, data: DeviceStatusPacket(deviceId: self.id, deviceValue: self.value)), to: connection)
+            try? DeviceServer.sendPacket(Packet(type: .DEVICE_STATUS_PACKET, data: DeviceStatusPacket(deviceId: id, deviceValue: value)), to: connection)
         }
     }
 

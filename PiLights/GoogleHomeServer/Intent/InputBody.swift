@@ -6,8 +6,8 @@
 //  Copyright © 2020 Philippe Weidmann. All rights reserved.
 //
 
-import Foundation
 import AnyCodable
+import Foundation
 
 class ExecutionCommand: Codable {
     var command: String

@@ -9,9 +9,9 @@
 import Foundation
 
 class QueryResponse: Codable {
-    var devices: [String : QueryDevice]
-    
+    var devices: [String: QueryDevice]
+
     init() {
-        devices = [String : QueryDevice]()
+        devices = [String: QueryDevice]()
     }
 }

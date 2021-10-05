@@ -13,7 +13,6 @@ import KituraWebSocket
 import Logging
 
 class DeviceServer: WebSocketService {
-
     private let deviceServerThread = DispatchQueue(label: "DeviceServer", attributes: .concurrent)
 
     static let instance = DeviceServer()
@@ -32,11 +31,10 @@ class DeviceServer: WebSocketService {
 
         for device in devices {
             HomeKitServer.instance.addAccessory(device: device)
-            if let room = self.getRoomWith(id: device.roomId) {
+            if let room = getRoomWith(id: device.roomId) {
                 room.devices.append(device)
             }
         }
-
     }
 
     public func startServer() {
@@ -59,14 +57,14 @@ class DeviceServer: WebSocketService {
     }
 
     public func disconnected(connection: WebSocketConnection, reason: WebSocketCloseReasonCode) {
-        if let device = self.getDeviceFor(connection: connection) {
+        if let device = getDeviceFor(connection: connection) {
             device.connection = nil
         }
         connections.removeValue(forKey: connection.id)
     }
 
     public func received(message: Data, from: WebSocketConnection) {
-        self.closeConnection(from)
+        closeConnection(from)
     }
 
     func closeConnection(_ connection: WebSocketConnection) {
@@ -78,10 +76,10 @@ class DeviceServer: WebSocketService {
     public func received(message: String, from: WebSocketConnection) {
         do {
             let packet = try jsonDecoder.decode(Packet<BasePacket>.self, from: message.data(using: .utf8)!)
-            let device = self.getDeviceFor(connection: from)
+            let device = getDeviceFor(connection: from)
 
-            if(device == nil && packet.type != .REGISTER_DEVICE_PACKET) {
-                self.closeConnection(from)
+            if device == nil && packet.type != .REGISTER_DEVICE_PACKET {
+                closeConnection(from)
                 return
             }
 
@@ -90,11 +88,11 @@ class DeviceServer: WebSocketService {
                 let registerDevicePacket = try jsonDecoder.decode(Packet<RegisterDevicePacket>.self, from: message.data(using: .utf8)!)
                 let resultPacket = DeviceRegisteredPacket(result: "fail")
 
-                if let newDevice = self.getDeviceWith(id: registerDevicePacket.data.deviceId) {
+                if let newDevice = getDeviceWith(id: registerDevicePacket.data.deviceId) {
                     resultPacket.result = "ok"
                     newDevice.connection = from
                 } else {
-                    var newDevice: Device! = nil
+                    var newDevice: Device!
                     if registerDevicePacket.data.deviceType == "dimmable" {
                         newDevice = DimmableLight(id: registerDevicePacket.data.deviceId, name: "Dimmable Light", value: 0, roomId: 1)
                     } else if registerDevicePacket.data.deviceType == "beacon" {
@@ -106,7 +104,7 @@ class DeviceServer: WebSocketService {
                     } else if registerDevicePacket.data.deviceType == "co2sensor" {
                         newDevice = CO2Sensor(id: registerDevicePacket.data.deviceId, name: "Co2Sensor", value: 0, roomId: 1)
                     }
-                    
+
                     if newDevice != nil {
                         resultPacket.result = "ok"
                         newDevice.connection = from
@@ -120,19 +118,17 @@ class DeviceServer: WebSocketService {
                     }
                 }
                 try DeviceServer.sendPacket(Packet(type: .DEVICE_REGISTERED_PACKET, data: resultPacket), to: from)
-                break
             case .DEVICE_STATUS_PACKET:
                 let deviceStatusPacket = try jsonDecoder.decode(Packet<DeviceStatusPacket>.self, from: message.data(using: .utf8)!)
 
                 if let thermometer = getDeviceWith(id: deviceStatusPacket.data.deviceId) as? Thermometer {
                     thermometer.value = deviceStatusPacket.data.deviceValue
                 }
-                break
             default:
-                self.closeConnection(from)
+                closeConnection(from)
             }
         } catch {
-            self.closeConnection(from)
+            closeConnection(from)
         }
     }
 
@@ -141,21 +137,20 @@ class DeviceServer: WebSocketService {
     }
 
     func getDeviceFor(connection: WebSocketConnection) -> Device? {
-        return devices.first { (device) -> Bool in
-            return device.connection?.id == connection.id
+        return devices.first { device -> Bool in
+            device.connection?.id == connection.id
         }
     }
 
     func getDeviceWith(id: Int) -> Device? {
-        return devices.first { (device) -> Bool in
-            return device.id == id
+        return devices.first { device -> Bool in
+            device.id == id
         }
     }
 
     func getRoomWith(id: Int) -> Room? {
-        return rooms.first { (room) -> Bool in
-            return room.id == id
+        return rooms.first { room -> Bool in
+            room.id == id
         }
     }
-
 }

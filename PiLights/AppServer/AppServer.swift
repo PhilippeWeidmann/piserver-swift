@@ -10,14 +10,13 @@ import Foundation
 import Kitura
 
 class AppServer {
-
     let deviceServer = DeviceServer.instance
     let router = Router()
 
     init() {
         router.all(middleware: BodyParser())
 
-        router.get("/rooms") { request, response, next in
+        router.get("/rooms") { _, response, next in
             let appResponse = AppResponse<[Room]>(status: "ok", message: "", data: self.deviceServer.rooms)
             response.send(appResponse)
             next()
@@ -26,8 +25,8 @@ class AppServer {
         router.post("/rooms") { request, response, next in
             let appResponse = AppResponse<Room>(status: "ok", message: "", data: nil)
             if let body = request.body?.asURLEncoded,
-                let newRoomName = self.getValueForPostBody(name: "roomName", body: body),
-                let room = SQLiteStorage.instance.addRoom(Room(id: -1, name: newRoomName)) {
+               let newRoomName = self.getValueForPostBody(name: "roomName", body: body),
+               let room = SQLiteStorage.instance.addRoom(Room(id: -1, name: newRoomName)) {
                 self.deviceServer.rooms.append(room)
                 appResponse.data = room
             } else {
@@ -39,7 +38,7 @@ class AppServer {
             next()
         }
 
-        router.get("/devices") { request, response, next in
+        router.get("/devices") { _, response, next in
             let appResponse = AppResponse<[Device]>(status: "ok", message: "", data: DeviceServer.instance.devices)
             response.send(appResponse)
             next()
@@ -47,9 +46,9 @@ class AppServer {
 
         router.post("/devices/:id") { request, response, next in
             if let requestId = request.parameters["id"],
-                let id = Int(requestId),
-                let device = self.deviceServer.getDeviceWith(id: id),
-                let body = request.body?.asURLEncoded {
+               let id = Int(requestId),
+               let device = self.deviceServer.getDeviceWith(id: id),
+               let body = request.body?.asURLEncoded {
                 if let newName = self.getValueForPostBody(name: "deviceName", body: body) {
                     if device.name != newName {
                         device.name = newName
@@ -57,7 +56,7 @@ class AppServer {
                     }
                 }
                 if let stringNewRoomId = self.getValueForPostBody(name: "roomId", body: body),
-                    let newRoomId = Int(stringNewRoomId) {
+                   let newRoomId = Int(stringNewRoomId) {
                     if newRoomId != device.roomId {
                         DeviceServer.instance.getRoomWith(id: device.roomId)?.removeDevice(device)
                         device.roomId = newRoomId
@@ -66,7 +65,7 @@ class AppServer {
                     }
                 }
                 if let stringNewValue = self.getValueForPostBody(name: "value", body: body),
-                    let newValue = Int(stringNewValue) {
+                   let newValue = Int(stringNewValue) {
                     if let dimmableLight = device as? DimmableLight {
                         dimmableLight.setDim(percent: newValue)
                     } else if let light = device as? Light {
@@ -76,7 +75,7 @@ class AppServer {
                     }
                 }
                 if let stringOn = self.getValueForPostBody(name: "on", body: body),
-                    let on = Bool(stringOn) {
+                   let on = Bool(stringOn) {
                     if let dimmableLight = device as? DimmableLight {
                         dimmableLight.switchLight(on: on)
                     }
@@ -93,7 +92,6 @@ class AppServer {
         logger.info("AppServer starting")
         Kitura.addHTTPServer(onPort: 10068, with: router)
     }
-
 
     func getValueForPostBody(name: String, body: [String: String]) -> String? {
         return body[name]

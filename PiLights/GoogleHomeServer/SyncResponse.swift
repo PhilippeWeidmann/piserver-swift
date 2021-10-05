@@ -11,7 +11,7 @@ import Foundation
 class SyncResponse: Codable {
     var agentUserId: String
     var devices: [SyncDevice]
-    
+
     init(agentUserId: String) {
         self.agentUserId = agentUserId
         self.devices = [SyncDevice]()

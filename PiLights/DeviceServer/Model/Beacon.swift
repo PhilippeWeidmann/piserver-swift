@@ -10,7 +10,6 @@ import Foundation
 import SQLite
 
 class Beacon: Device {
-    
     init(id: Int, name: String, value: Int, roomId: Int) {
         super.init(id: id, name: name, type: .beacon, value: value, roomId: roomId)
     }
@@ -24,7 +23,7 @@ class Beacon: Device {
             roomId: try values.decode(Int.self, forKey: .roomId)
         )
     }
-    
+
     convenience init(row: Statement.Element) {
         self.init(
             id: Int(row[0] as! Int64),
@@ -39,7 +38,7 @@ class Beacon: Device {
         device.traits = ["action.devices.traits.SensorState"]
         return device
     }
-    
+
     override func toGoogleHomeQueryDevice() -> QueryDevice {
         let device = super.toGoogleHomeQueryDevice()
         device.thermostatTemperatureAmbient = value

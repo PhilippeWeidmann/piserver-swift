@@ -10,7 +10,6 @@ import Foundation
 import SQLite
 
 class Thermometer: Device {
-
     init(id: Int, name: String, value: Int, roomId: Int) {
         super.init(id: id, name: name, type: .thermometer, value: value, roomId: roomId)
     }
@@ -33,14 +32,14 @@ class Thermometer: Device {
             roomId: Int(row[3] as! Int64)
         )
     }
-    
+
     override func toGoogleHomeSyncDevice() -> SyncDevice {
         let device = super.toGoogleHomeSyncDevice()
         device.traits = ["action.devices.traits.TemperatureSetting"]
-        device.attributes = ["queryOnlyTemperatureSetting" : true, "thermostatTemperatureUnit": "C"]
+        device.attributes = ["queryOnlyTemperatureSetting": true, "thermostatTemperatureUnit": "C"]
         return device
     }
-    
+
     override func toGoogleHomeQueryDevice() -> QueryDevice {
         let device = super.toGoogleHomeQueryDevice()
         device.thermostatTemperatureAmbient = value

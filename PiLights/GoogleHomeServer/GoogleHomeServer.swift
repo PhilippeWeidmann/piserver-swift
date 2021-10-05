@@ -6,12 +6,12 @@
 //  Copyright © 2020 Philippe Weidmann. All rights reserved.
 //
 
+import AnyCodable
 import Foundation
 import Kitura
-import AnyCodable
 
 class GoogleHomeServer {
-    //https://developers.google.com/assistant/smarthome/traits/
+    // https://developers.google.com/assistant/smarthome/traits/
     let deviceServer = DeviceServer.instance
     let router = Router()
 
@@ -20,9 +20,9 @@ class GoogleHomeServer {
 
         router.get("/fakeauth") { request, response, next in
             if let redirectUrl = request.queryParameters["redirect_uri"],
-                let state = request.queryParameters["state"] {
+               let state = request.queryParameters["state"] {
                 let responseURL = redirectUrl + "?code=fdasjafluudsadj54qrwqfafda$$&state=" + state
-                let _ = try? response.redirect(responseURL)
+                _ = try? response.redirect(responseURL)
             }
             next()
         }
@@ -34,17 +34,17 @@ class GoogleHomeServer {
                         "token_type": "bearer",
                         "access_token": "123access",
                         "refresh_token": "123refresh",
-                        "expires_in": 86400] as [String: Any]
+                        "expires_in": 86400,
+                    ] as [String: Any]
                     response.send(json: authResponse)
                 } else if grantType == "refresh_token" {
                     let refreshResponse = [
                         "token_type": "bearer",
                         "access_token": "123access",
-                        "expires_in": 86400] as [String: Any]
+                        "expires_in": 86400,
+                    ] as [String: Any]
                     response.send(json: refreshResponse)
-                } else {
-
-                }
+                } else {}
             }
             next()
         }
@@ -125,7 +125,6 @@ class GoogleHomeServer {
                                             execCommand.states["on"] = AnyCodable(light.value == 0)
                                         }
                                     }
-                                    
                                 }
                             }
                         }

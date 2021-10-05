@@ -9,8 +9,7 @@
 import Foundation
 
 class Packet<PacketData: Codable>: Codable {
-    
-    enum PacketType : Int, Codable {
+    enum PacketType: Int, Codable {
         case DEVICE_STATUS_PACKET = 1
         case REGISTER_DEVICE_PACKET = 2
         case DEVICE_REGISTERED_PACKET = 3
@@ -23,9 +22,6 @@ class Packet<PacketData: Codable>: Codable {
         self.type = type
         self.data = data
     }
-    
 }
 
-class BasePacket: Codable  {
-    
-}
+class BasePacket: Codable {}

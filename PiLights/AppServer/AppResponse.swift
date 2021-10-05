@@ -9,11 +9,10 @@
 import Foundation
 
 class AppResponse<Content: Codable>: Codable {
-    
     var status: String
     var message: String
     var data: Content?
-    
+
     init(status: String, message: String, data: Content?) {
         self.status = status
         self.message = message

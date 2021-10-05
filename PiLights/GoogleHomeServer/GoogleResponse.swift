@@ -8,10 +8,10 @@
 
 import Foundation
 
-class GoogleResponse<Response : Codable>: Codable {
+class GoogleResponse<Response: Codable>: Codable {
     var payload: Response
     var requestId: String!
-    
+
     init(payload: Response, requestId: String) {
         self.payload = payload
         self.requestId = requestId

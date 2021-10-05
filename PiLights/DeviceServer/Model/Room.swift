@@ -10,17 +10,16 @@ import Foundation
 import SQLite
 
 class Room: Codable {
-    
     let id: Int
     let name: String
     var devices: [Device]
-    
+
     init(id: Int, name: String) {
         self.id = id
         self.name = name
         self.devices = [Device]()
     }
-    
+
     convenience init(row: Statement.Element) {
         self.init(
             id: Int(row[0] as! Int64),
@@ -29,11 +28,11 @@ class Room: Codable {
     }
 
     func removeDevice(_ toRemoveDevice: Device) {
-        devices.removeAll { (device) -> Bool in
-            return toRemoveDevice == device
+        devices.removeAll { device -> Bool in
+            toRemoveDevice == device
         }
     }
-    
+
     func addDevice(_ newDevice: Device) {
         devices.append(newDevice)
     }

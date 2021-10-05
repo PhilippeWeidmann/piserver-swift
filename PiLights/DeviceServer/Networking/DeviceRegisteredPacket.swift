@@ -9,11 +9,9 @@
 import Foundation
 
 class DeviceRegisteredPacket: Codable {
-    
     public var result: String
-    
+
     init(result: String) {
         self.result = result
     }
-    
 }

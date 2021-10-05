@@ -12,7 +12,6 @@ import KituraWebSocket
 import SQLite
 
 class DimmableLight: Device {
-
     init(id: Int, name: String, value: Int, roomId: Int) {
         super.init(id: id, name: name, type: .dimmableLight, value: value, roomId: roomId)
     }
@@ -52,13 +51,13 @@ class DimmableLight: Device {
         value = percent
         self.sendUpdatePacket()
     }
-    
+
     override func toGoogleHomeSyncDevice() -> SyncDevice {
         let device = super.toGoogleHomeSyncDevice()
         device.traits = ["action.devices.traits.OnOff", "action.devices.traits.Brightness"]
         return device
     }
-    
+
     override func toGoogleHomeQueryDevice() -> QueryDevice {
         let device = super.toGoogleHomeQueryDevice()
         device.on = value > 0
