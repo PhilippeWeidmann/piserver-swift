@@ -28,6 +28,9 @@
 		3770C30F24E0592B004C98E7 /* GoogleHomeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770C30E24E0592B004C98E7 /* GoogleHomeServer.swift */; };
 		3773ABAF24FEC42D00C7767F /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3773ABAE24FEC42D00C7767F /* Light.swift */; };
 		3773ABB124FEC4F800C7767F /* HKLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3773ABB024FEC4F800C7767F /* HKLight.swift */; };
+		37779A7C270C4A570039138A /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = 37779A7B270C4A570039138A /* HAP */; };
+		37779A7E270C4B7C0039138A /* CO2Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37779A7D270C4B7C0039138A /* CO2Sensor.swift */; };
+		37ABE1E8270B8C2C00154355 /* HKCO2Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABE1E7270B8C2C00154355 /* HKCO2Sensor.swift */; };
 		37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADCD54249A63AD001AAC52 /* AppResponse.swift */; };
 		37D4EC532499FF7300188627 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC522499FF7300188627 /* Logging */; };
 		37D4EC58249A578600188627 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC57249A578600188627 /* Beacon.swift */; };
@@ -35,7 +38,6 @@
 		37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4EC5B249A5C7F00188627 /* HKThermometer.swift */; };
 		37D4EC61249A61B600188627 /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = 37D4EC60249A61B600188627 /* Kitura */; };
 		37F4F816249699B70023E80C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F815249699B70023E80C /* main.swift */; };
-		37F4F81E249699ED0023E80C /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = 37F4F81D249699ED0023E80C /* HAP */; };
 		37F4F86A24969E3F0023E80C /* DimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F86924969E3F0023E80C /* DimmableLight.swift */; };
 		37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 37F4F86C24969F800023E80C /* Kitura-WebSocket */; };
 		37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4F86E24969F8E0023E80C /* DeviceServer.swift */; };
@@ -77,6 +79,8 @@
 		3770C30E24E0592B004C98E7 /* GoogleHomeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHomeServer.swift; sourceTree = "<group>"; };
 		3773ABAE24FEC42D00C7767F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		3773ABB024FEC4F800C7767F /* HKLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKLight.swift; sourceTree = "<group>"; };
+		37779A7D270C4B7C0039138A /* CO2Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CO2Sensor.swift; sourceTree = "<group>"; };
+		37ABE1E7270B8C2C00154355 /* HKCO2Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKCO2Sensor.swift; sourceTree = "<group>"; };
 		37ADCD54249A63AD001AAC52 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		37D4EC57249A578600188627 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		37D4EC59249A57DE00188627 /* HKBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBeacon.swift; sourceTree = "<group>"; };
@@ -97,10 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37779A7C270C4A570039138A /* HAP in Frameworks */,
 				376494C02497D9EF0010FFDF /* SQLite in Frameworks */,
 				37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */,
 				37D4EC532499FF7300188627 /* Logging in Frameworks */,
-				37F4F81E249699ED0023E80C /* HAP in Frameworks */,
 				3770C30B24E006A4004C98E7 /* AnyCodable in Frameworks */,
 				37D4EC61249A61B600188627 /* Kitura in Frameworks */,
 			);
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */,
+				37ABE1E7270B8C2C00154355 /* HKCO2Sensor.swift */,
 				37D4EC5B249A5C7F00188627 /* HKThermometer.swift */,
 				3773ABB024FEC4F800C7767F /* HKLight.swift */,
 				37D4EC59249A57DE00188627 /* HKBeacon.swift */,
@@ -150,6 +155,7 @@
 				376494C42498082C0010FFDF /* Room.swift */,
 				37D4EC57249A578600188627 /* Beacon.swift */,
 				376BAA7D24E32C4800954E2E /* Thermometer.swift */,
+				37779A7D270C4B7C0039138A /* CO2Sensor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,12 +250,12 @@
 			);
 			name = PiLights;
 			packageProductDependencies = (
-				37F4F81D249699ED0023E80C /* HAP */,
 				37F4F86C24969F800023E80C /* Kitura-WebSocket */,
 				376494BF2497D9EF0010FFDF /* SQLite */,
 				37D4EC522499FF7300188627 /* Logging */,
 				37D4EC60249A61B600188627 /* Kitura */,
 				3770C30A24E006A4004C98E7 /* AnyCodable */,
+				37779A7B270C4A570039138A /* HAP */,
 			);
 			productName = PiLights;
 			productReference = 37F4F812249699B70023E80C /* PiLights */;
@@ -280,12 +286,12 @@
 			);
 			mainGroup = 37F4F809249699B70023E80C;
 			packageReferences = (
-				37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */,
 				37F4F86B24969F800023E80C /* XCRemoteSwiftPackageReference "Kitura-WebSocket" */,
 				376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */,
 				37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */,
 				37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */,
 				3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */,
+				37779A7A270C48F00039138A /* XCRemoteSwiftPackageReference "HAP" */,
 			);
 			productRefGroup = 37F4F813249699B70023E80C /* Products */;
 			projectDirPath = "";
@@ -309,6 +315,7 @@
 				37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */,
 				37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */,
 				37F4F8BA2496B9CE0023E80C /* Packet.swift in Sources */,
+				37779A7E270C4B7C0039138A /* CO2Sensor.swift in Sources */,
 				3770C30024E0006C004C98E7 /* QueryDevice.swift in Sources */,
 				3770C30D24E058F2004C98E7 /* AppServer.swift in Sources */,
 				3770C30F24E0592B004C98E7 /* GoogleHomeServer.swift in Sources */,
@@ -319,6 +326,7 @@
 				3773ABB124FEC4F800C7767F /* HKLight.swift in Sources */,
 				37D4EC5A249A57DE00188627 /* HKBeacon.swift in Sources */,
 				37ADCD55249A63AD001AAC52 /* AppResponse.swift in Sources */,
+				37ABE1E8270B8C2C00154355 /* HKCO2Sensor.swift in Sources */,
 				37D4EC58249A578600188627 /* Beacon.swift in Sources */,
 				3762D02E24E19E8300DD48B1 /* InputBody.swift in Sources */,
 				376494C52498082C0010FFDF /* Room.swift in Sources */,
@@ -388,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -444,7 +452,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -461,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CZLT48TREY;
 				ENABLE_HARDENED_RUNTIME = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -474,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CZLT48TREY;
 				ENABLE_HARDENED_RUNTIME = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -519,6 +529,14 @@
 				minimumVersion = 0.3.0;
 			};
 		};
+		37779A7A270C48F00039138A /* XCRemoteSwiftPackageReference "HAP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PhilippeWeidmann/HAP";
+			requirement = {
+				branch = catalina;
+				kind = branch;
+			};
+		};
 		37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log/";
@@ -533,14 +551,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.9.1;
-			};
-		};
-		37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Bouke/HAP.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
 			};
 		};
 		37F4F86B24969F800023E80C /* XCRemoteSwiftPackageReference "Kitura-WebSocket" */ = {
@@ -564,6 +574,11 @@
 			package = 3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */;
 			productName = AnyCodable;
 		};
+		37779A7B270C4A570039138A /* HAP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37779A7A270C48F00039138A /* XCRemoteSwiftPackageReference "HAP" */;
+			productName = HAP;
+		};
 		37D4EC522499FF7300188627 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 37D4EC512499FF7300188627 /* XCRemoteSwiftPackageReference "swift-log" */;
@@ -573,11 +588,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */;
 			productName = Kitura;
-		};
-		37F4F81D249699ED0023E80C /* HAP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 37F4F81C249699ED0023E80C /* XCRemoteSwiftPackageReference "HAP" */;
-			productName = HAP;
 		};
 		37F4F86C24969F800023E80C /* Kitura-WebSocket */ = {
 			isa = XCSwiftPackageProductDependency;

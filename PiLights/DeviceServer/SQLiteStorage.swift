@@ -10,13 +10,10 @@ import Foundation
 import SQLite
 
 class SQLiteStorage {
-
     static let instance = SQLiteStorage()
     private var connection: Connection!
 
-    private init() {
-
-    }
+    private init() {}
 
     private func getConnection() -> Connection {
         if connection == nil {
@@ -73,14 +70,16 @@ class SQLiteStorage {
         var devices = [Device]()
         do {
             for row in try connection.prepare(sql) {
-                if((row[2] as! String) == DeviceType.dimmableLight.rawValue) {
+                if (row[2] as! String) == DeviceType.dimmableLight.rawValue {
                     devices.append(DimmableLight(row: row))
-                } else if ((row[2] as! String) == DeviceType.beacon.rawValue){
+                } else if (row[2] as! String) == DeviceType.beacon.rawValue {
                     devices.append(Beacon(row: row))
-                } else if ((row[2] as! String) == DeviceType.thermometer.rawValue){
+                } else if (row[2] as! String) == DeviceType.thermometer.rawValue {
                     devices.append(Thermometer(row: row))
-                } else if ((row[2] as! String) == DeviceType.light.rawValue){
+                } else if (row[2] as! String) == DeviceType.light.rawValue {
                     devices.append(Light(row: row))
+                } else if (row[2] as! String) == DeviceType.co2Sensor.rawValue {
+                    devices.append(CO2Sensor(row: row))
                 }
             }
         } catch {
@@ -99,5 +98,4 @@ class SQLiteStorage {
             logger.error("SQL - Error adding device \(error)")
         }
     }
-
 }

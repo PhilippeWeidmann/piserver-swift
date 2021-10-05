@@ -19,14 +19,16 @@ public enum DeviceType: String, Codable {
     case beacon
     case thermometer
     case light
-    
+    case co2Sensor
+
     var googleValue: String {
         get {
             let values = [
                 DeviceType.dimmableLight: "action.devices.types.LIGHT",
                 DeviceType.light: "action.devices.types.LIGHT",
                 DeviceType.beacon: "action.devices.types.THERMOSTAT",
-                DeviceType.thermometer: "action.devices.types.THERMOSTAT"]
+                DeviceType.thermometer: "action.devices.types.THERMOSTAT",
+                DeviceType.co2Sensor: "action.devices.types.THERMOSTAT"]
             return values[self]!
         }
     }

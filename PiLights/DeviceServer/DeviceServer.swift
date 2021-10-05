@@ -103,6 +103,8 @@ class DeviceServer: WebSocketService {
                         newDevice = Thermometer(id: registerDevicePacket.data.deviceId, name: "Thermometer", value: 20, roomId: 1)
                     } else if registerDevicePacket.data.deviceType == "light" {
                         newDevice = Light(id: registerDevicePacket.data.deviceId, name: "Light", value: 0, roomId: 1)
+                    } else if registerDevicePacket.data.deviceType == "co2sensor" {
+                        newDevice = CO2Sensor(id: registerDevicePacket.data.deviceId, name: "Co2Sensor", value: 0, roomId: 1)
                     }
                     
                     if newDevice != nil {
