@@ -11,15 +11,17 @@ import HAP
 
 class HKCO2Sensor: Accessory {
     private let sensor: CO2Sensor
-    let service = Service.CarbonDioxideSensor()
+    let service = Service.CarbonDioxideSensor(characteristics: [AnyCharacteristic(GenericCharacteristic<Float>(type: .carbonDioxideLevel, value: 700, permissions: [.read, .events]))])
     init(sensor: CO2Sensor) {
         self.sensor = sensor
         super.init(info: .init(name: sensor.name, serialNumber: "\(sensor.id)"), type: .sensor, services: [service])
         self.reachable = true
-        service.carbonDioxideLevel?.value = 900
+        service.carbonDioxideDetected.value = .normal
+        service.carbonDioxideLevel?.value = 700
     }
 
     func didUpdateValue(_ newValue: Int) {
+        service.carbonDioxideDetected.value = sensor.value > 1800 ? .abnormal : .normal
         service.carbonDioxideLevel?.value = Float(sensor.value)
     }
 }

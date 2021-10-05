@@ -11,7 +11,7 @@ import SQLite
 
 class CO2Sensor: Device {
     init(id: Int, name: String, value: Int, roomId: Int) {
-        super.init(id: id, name: name, type: .beacon, value: value, roomId: roomId)
+        super.init(id: id, name: name, type: .co2Sensor, value: value, roomId: roomId)
     }
 
     required convenience init(from decoder: Decoder) throws {
