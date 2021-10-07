@@ -12,6 +12,7 @@ import SQLite
 class SQLiteStorage {
     static let instance = SQLiteStorage()
     private var connection: Connection!
+    private let queue = DispatchQueue(label: "DBQueue")
 
     private init() {}
 
@@ -96,6 +97,19 @@ class SQLiteStorage {
             try stmt.run(device.id, device.name, device.type.rawValue, device.roomId, device.value)
         } catch {
             logger.error("SQL - Error adding device \(error)")
+        }
+    }
+
+    public func logHistory(_ device: Device) {
+        queue.async {
+            let sql = "INSERT INTO history(deviceId, value) VALUES(?, ?)"
+            let connection = self.getConnection()
+            do {
+                let stmt = try connection.prepare(sql)
+                try stmt.run(device.id, device.value)
+            } catch {
+                logger.error("SQL - Error logging history \(error)")
+            }
         }
     }
 }

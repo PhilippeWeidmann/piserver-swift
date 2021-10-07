@@ -41,6 +41,7 @@ class Device: Codable, Equatable {
     var value: Int {
         didSet {
             delegate?.didUpdateValue(value)
+            SQLiteStorage.instance.logHistory(self)
         }
     }
 

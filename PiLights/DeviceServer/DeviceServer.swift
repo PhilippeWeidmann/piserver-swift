@@ -123,6 +123,8 @@ class DeviceServer: WebSocketService {
 
                 if let thermometer = getDeviceWith(id: deviceStatusPacket.data.deviceId) as? Thermometer {
                     thermometer.value = deviceStatusPacket.data.deviceValue
+                } else if let co2Sensor = getDeviceWith(id: deviceStatusPacket.data.deviceId) as? CO2Sensor {
+                    co2Sensor.value = deviceStatusPacket.data.deviceValue
                 }
             default:
                 closeConnection(from)
