@@ -19,7 +19,7 @@ class HKThermometer: HAP.Accessory.Thermometer, DeviceUpdatedDelegate {
         self.temperatureSensor.currentTemperature.value = Float(thermometer.value)
     }
 
-    func didUpdateValue(_ newValue: Int) {
+    func didUpdateValue(_ newValue: Double) {
         self.temperatureSensor.currentTemperature.value = Float(self.thermometer.value)
     }
 }

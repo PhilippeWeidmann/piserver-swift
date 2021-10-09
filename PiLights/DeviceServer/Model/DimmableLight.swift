@@ -12,7 +12,7 @@ import KituraWebSocket
 import SQLite
 
 class DimmableLight: Device {
-    init(id: Int, name: String, value: Int, roomId: Int) {
+    init(id: Int, name: String, value: Double, roomId: Int) {
         super.init(id: id, name: name, type: .dimmableLight, value: value, roomId: roomId)
     }
 
@@ -21,7 +21,7 @@ class DimmableLight: Device {
         self.init(
             id: try values.decode(Int.self, forKey: .id),
             name: try values.decode(String.self, forKey: .name),
-            value: try values.decode(Int.self, forKey: .value),
+            value: try values.decode(Double.self, forKey: .value),
             roomId: try values.decode(Int.self, forKey: .roomId)
         )
     }
@@ -30,7 +30,7 @@ class DimmableLight: Device {
         self.init(
             id: Int(row[0] as! Int64),
             name: row[1] as! String,
-            value: Int(row[4] as! Int64),
+            value: row[4] as! Double,
             roomId: Int(row[3] as! Int64)
         )
     }
@@ -47,7 +47,7 @@ class DimmableLight: Device {
         }
     }
 
-    func setDim(percent: Int) {
+    func setDim(percent: Double) {
         value = percent
         self.sendUpdatePacket()
     }

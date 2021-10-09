@@ -20,7 +20,7 @@ class HKLight: HAP.Accessory.Lightbulb, DeviceUpdatedDelegate {
         self.didUpdateValue(self.light.value)
     }
 
-    func didUpdateValue(_ newValue: Int) {
+    func didUpdateValue(_ newValue: Double) {
         self.lightbulb.powerState.value = newValue != 0
     }
 

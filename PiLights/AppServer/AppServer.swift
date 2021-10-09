@@ -65,7 +65,7 @@ class AppServer {
                     }
                 }
                 if let stringNewValue = self.getValueForPostBody(name: "value", body: body),
-                   let newValue = Int(stringNewValue) {
+                   let newValue = Double(stringNewValue) {
                     if let dimmableLight = device as? DimmableLight {
                         dimmableLight.setDim(percent: newValue)
                     } else if let light = device as? Light {

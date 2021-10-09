@@ -21,7 +21,7 @@ class HKCO2Sensor: Accessory, DeviceUpdatedDelegate {
         service.carbonDioxideLevel?.value = 700
     }
 
-    func didUpdateValue(_ newValue: Int) {
+    func didUpdateValue(_ newValue: Double) {
         service.carbonDioxideDetected.value = sensor.value > 1800 ? .abnormal : .normal
         service.carbonDioxideLevel?.value = Float(sensor.value)
     }

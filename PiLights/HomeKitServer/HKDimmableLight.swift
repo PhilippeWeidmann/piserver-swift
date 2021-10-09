@@ -20,16 +20,16 @@ class HKDimmableLight: HAP.Accessory.Lightbulb, DeviceUpdatedDelegate {
         self.didUpdateValue(self.light.value)
     }
 
-    func didUpdateValue(_ newValue: Int) {
+    func didUpdateValue(_ newValue: Double) {
         self.lightbulb.powerState.value = newValue != 0
-        self.lightbulb.brightness?.value = newValue
+        self.lightbulb.brightness?.value = Int(newValue)
     }
 
     override func characteristic<T>(_ characteristic: GenericCharacteristic<T>, ofService service: Service, didChangeValue newValue: T?) where T: CharacteristicValueType {
         if characteristic === self.lightbulb.powerState {
             self.light.switchLight(on: newValue as! Bool)
         } else if characteristic === self.lightbulb.brightness {
-            self.light.setDim(percent: newValue as! Int)
+            self.light.setDim(percent: Double(newValue as! Int))
         }
 
         super.characteristic(characteristic, ofService: service, didChangeValue: newValue)

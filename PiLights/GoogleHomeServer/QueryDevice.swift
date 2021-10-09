@@ -11,6 +11,6 @@ import Foundation
 class QueryDevice: Codable {
     var online: Bool = true
     var on: Bool?
-    var brightness: Int?
-    var thermostatTemperatureAmbient: Int?
+    var brightness: Double?
+    var thermostatTemperatureAmbient: Double?
 }

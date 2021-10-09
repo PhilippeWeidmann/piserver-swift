@@ -11,5 +11,5 @@ import Foundation
 class RegisterDevicePacket: Codable {
     public let deviceId: Int
     public let deviceType: String
-    public let deviceValue: Int?
+    public let deviceValue: Double?
 }

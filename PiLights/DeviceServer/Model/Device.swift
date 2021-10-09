@@ -11,7 +11,7 @@ import KituraNet
 import KituraWebSocket
 
 public protocol DeviceUpdatedDelegate {
-    func didUpdateValue(_ newValue: Int)
+    func didUpdateValue(_ newValue: Double)
 }
 
 public enum DeviceType: String, Codable {
@@ -38,7 +38,7 @@ class Device: Codable, Equatable {
     var id: Int
     var name: String
     var type: DeviceType
-    var value: Int {
+    var value: Double {
         didSet {
             delegate?.didUpdateValue(value)
             SQLiteStorage.instance.logHistory(self)
@@ -56,7 +56,7 @@ class Device: Codable, Equatable {
         case roomId
     }
 
-    init(id: Int, name: String, type: DeviceType, value: Int, roomId: Int) {
+    init(id: Int, name: String, type: DeviceType, value: Double, roomId: Int) {
         self.id = id
         self.name = name
         self.type = type

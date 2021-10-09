@@ -108,7 +108,7 @@ class GoogleHomeServer {
                             for exec in command.execution {
                                 if exec.command == "action.devices.commands.BrightnessAbsolute" {
                                     if let dimmableLight = device as? DimmableLight {
-                                        if let percent = exec.params["brightness"]?.value as? Int {
+                                        if let percent = exec.params["brightness"]?.value as? Double {
                                             dimmableLight.setDim(percent: percent)
                                             execCommand.states["on"] = AnyCodable(dimmableLight.value)
                                         }
