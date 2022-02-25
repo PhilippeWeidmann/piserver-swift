@@ -11,7 +11,9 @@ import HAP
 import Kitura
 import Logging
 
-let logger = Logger(label: "ch.Pilights")
+var logger = Logger(label: "ch.Pilights")
+logger.logLevel = .info
+
 var keepRunning = true
 
 func stop() {
@@ -26,6 +28,8 @@ let homeKitServerThread = DispatchQueue(label: "HomeKitServer", attributes: .con
 homeKitServerThread.async {
     _ = HomeKitServer.instance
 }
+
+let mqttServer = MQTTServer.instance
 
 DeviceServer.instance.startServer()
 

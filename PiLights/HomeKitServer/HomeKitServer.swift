@@ -17,7 +17,7 @@ class HomeKitServer {
     private let accessories = [Accessory]()
 
     private init() {
-        bridge = HAP.Device(bridgeInfo: Service.Info(name: "Home Test", serialNumber: "A1"), setupCode: "123-44-321", storage: FileStorage(filename: "configuration.json"), accessories: accessories)
+        bridge = HAP.Device(bridgeInfo: Service.Info(name: "[Debug] Home Test", serialNumber: "A1"), setupCode: "123-44-321", storage: FileStorage(filename: "configuration.json"), accessories: accessories)
         do {
             server = try HAP.Server(device: bridge, listenPort: 0)
             logger.info("HomeKitServer started")
@@ -39,6 +39,10 @@ class HomeKitServer {
         } else if device.type == .co2Sensor {
             bridge.addAccessories([HKCO2Sensor(sensor: device as! CO2Sensor)])
         }
+    }
+
+    public func addAccessory(accessory: HAP.Accessory) {
+        bridge.addAccessories([accessory])
     }
 
     public func stop() {
