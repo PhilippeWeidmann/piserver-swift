@@ -38,8 +38,10 @@ class ZBAccessory: Accessory {
                                   let characteristicType = FeatureName.featureNameToCharacteristicType[numericFeature.name] {
                             let characteristic = GenericCharacteristic<Int>(type: characteristicType,
                                                                             value: numericFeature.valueMax,
+                                                                            format: .int,
                                                                             maxValue: Double(numericFeature.valueMax),
-                                                                            minValue: Double(numericFeature.valueMin))
+                                                                            minValue: Double(numericFeature.valueMin),
+                                                                            minStep: 1)
                             characteristics.append(AnyCharacteristic(characteristic))
                             exposedFeatures[numericFeature.name] = numericFeature
                             exposedCharacteristics[numericFeature.name] = characteristic

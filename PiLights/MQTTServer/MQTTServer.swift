@@ -85,16 +85,12 @@ class MQTTServer {
     func setBinaryFeature(_ feature: BinaryFeature, value: Bool, for device: ZBDevice) {
         let value = value ? feature.valueOn : feature.valueOff
         let topicName = topicNameFromDeviceAndFeature(feature: feature, device: device, set: true)
-        client.publish(to: topicName, payload: .init(string: value), qos: .atLeastOnce).whenComplete { result in
-            print(result)
-        }
+        client.publish(to: topicName, payload: .init(string: value), qos: .atLeastOnce).whenComplete { _ in }
     }
 
     func setNumericFeature(_ feature: NumericFeature, value: Int, for device: ZBDevice) {
         let topicName = topicNameFromDeviceAndFeature(feature: feature, device: device, set: true)
-        client.publish(to: topicName, payload: .init(string: "\(value)"), qos: .atLeastOnce).whenComplete { result in
-            print(result)
-        }
+        client.publish(to: topicName, payload: .init(string: "\(value)"), qos: .atLeastOnce).whenComplete { _ in }
     }
 
     private func topicNameFromDeviceAndFeature(feature: NamedFeature, device: ZBDevice, set: Bool) -> String {
