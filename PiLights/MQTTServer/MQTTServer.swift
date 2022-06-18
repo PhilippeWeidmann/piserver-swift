@@ -74,9 +74,9 @@ class MQTTServer {
         for device in devices {
             if let definition = device.definition,
                !definition.exposes.isEmpty {
-                if let accessory = ZBAccessory(zbDevice: device) {
-                    HomeKitServer.instance.addAccessory(accessory: accessory)
-                    zbDevices[device.friendlyName] = accessory
+                if let accessory = ZBAccessory(zbDevice: device),
+                   let updatedAccessory = HomeKitServer.instance.addOrUpdateAccessory(accessory: accessory) {
+                    zbDevices[device.friendlyName] = updatedAccessory
                 }
             }
         }

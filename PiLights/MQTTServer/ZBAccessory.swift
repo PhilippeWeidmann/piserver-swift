@@ -14,7 +14,7 @@ protocol TypeErasedcCharacteristic {}
 extension GenericCharacteristic: TypeErasedcCharacteristic {}
 
 class ZBAccessory: Accessory {
-    private var zbDevice: ZBDevice
+    var zbDevice: ZBDevice
     private var exposedFeatures = [FeatureName: Feature]()
     private var exposedCharacteristics = [FeatureName: TypeErasedcCharacteristic]()
 
