@@ -14,10 +14,9 @@ class HomeKitServer {
     static let instance = HomeKitServer()
     private let server: HAP.Server?
     private let bridge: HAP.Device
-    private let accessories = [Accessory]()
 
     private init() {
-        bridge = HAP.Device(bridgeInfo: Service.Info(name: "Home Test", serialNumber: "A1"), setupCode: "123-44-321", storage: FileStorage(filename: "configuration.json"), accessories: accessories)
+        bridge = HAP.Device(bridgeInfo: Service.Info(name: "Home Test", serialNumber: "A1"), setupCode: "123-44-321", storage: FileStorage(filename: "configuration.json"), accessories: [])
         do {
             server = try HAP.Server(device: bridge, listenPort: 0)
             logger.info("HomeKitServer started")
@@ -38,6 +37,22 @@ class HomeKitServer {
             bridge.addAccessories([HKLight(light: device as! Light)])
         } else if device.type == .co2Sensor {
             bridge.addAccessories([HKCO2Sensor(sensor: device as! CO2Sensor)])
+        }
+    }
+
+    public func addOrUpdateAccessory(accessory: ZBAccessory) -> ZBAccessory?  {
+        if let existingAccessory = bridge.accessories.first(where: {$0.serialNumber == accessory.serialNumber}) {
+            if let existingAccessory = existingAccessory as? ZBAccessory {
+                logger.info("Updating accessory (if the accessory doesn't contain the same services this might create a bug)")
+                existingAccessory.zbDevice = accessory.zbDevice
+                return existingAccessory
+            } else {
+                logger.error("Found accessory which was not previously a ZBAccessory")
+                return nil
+            }
+        } else {
+            bridge.addAccessories([accessory])
+            return accessory
         }
     }
 

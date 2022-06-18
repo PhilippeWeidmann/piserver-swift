@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37193E8727C4D14A00068242 /* MQTTNIO in Frameworks */ = {isa = PBXBuildFile; productRef = 37193E8627C4D14A00068242 /* MQTTNIO */; };
+		37193E8A27C4D2B800068242 /* MQTTServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37193E8927C4D2B800068242 /* MQTTServer.swift */; };
+		37193E9027C4E3BA00068242 /* ZBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37193E8F27C4E3BA00068242 /* ZBDevice.swift */; };
+		37193E9227C4E50500068242 /* ZBDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37193E9127C4E50500068242 /* ZBDefinition.swift */; };
+		37193E9427C4F02300068242 /* ZBFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37193E9327C4F02300068242 /* ZBFeature.swift */; };
+		37193E9627C4F51200068242 /* ZBAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37193E9527C4F51200068242 /* ZBAccessory.swift */; };
 		373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */; };
 		3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F22124980F4100101719 /* DeviceStatusPacket.swift */; };
 		3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744F2692498141E00101719 /* HomeKitServer.swift */; };
@@ -60,6 +66,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37193E8927C4D2B800068242 /* MQTTServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTServer.swift; sourceTree = "<group>"; };
+		37193E8F27C4E3BA00068242 /* ZBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBDevice.swift; sourceTree = "<group>"; };
+		37193E9127C4E50500068242 /* ZBDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBDefinition.swift; sourceTree = "<group>"; };
+		37193E9327C4F02300068242 /* ZBFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBFeature.swift; sourceTree = "<group>"; };
+		37193E9527C4F51200068242 /* ZBAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBAccessory.swift; sourceTree = "<group>"; };
 		373EEBE224980BCC00A8D7C1 /* HKDimmableLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDimmableLight.swift; sourceTree = "<group>"; };
 		3744F22124980F4100101719 /* DeviceStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusPacket.swift; sourceTree = "<group>"; };
 		3744F2692498141E00101719 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
@@ -102,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37779A7C270C4A570039138A /* HAP in Frameworks */,
+				37193E8727C4D14A00068242 /* MQTTNIO in Frameworks */,
 				376494C02497D9EF0010FFDF /* SQLite in Frameworks */,
 				37F4F86D24969F800023E80C /* Kitura-WebSocket in Frameworks */,
 				37D4EC532499FF7300188627 /* Logging in Frameworks */,
@@ -113,6 +125,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37193E8827C4D2A900068242 /* MQTTServer */ = {
+			isa = PBXGroup;
+			children = (
+				37193E8E27C4E3A900068242 /* Models */,
+				37193E8B27C4E33C00068242 /* Messages */,
+				37193E8927C4D2B800068242 /* MQTTServer.swift */,
+				37193E9527C4F51200068242 /* ZBAccessory.swift */,
+			);
+			path = MQTTServer;
+			sourceTree = "<group>";
+		};
+		37193E8B27C4E33C00068242 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		37193E8E27C4E3A900068242 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37193E8F27C4E3BA00068242 /* ZBDevice.swift */,
+				37193E9127C4E50500068242 /* ZBDefinition.swift */,
+				37193E9327C4F02300068242 /* ZBFeature.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		373EEBE124980B9200A8D7C1 /* DeviceServer */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +254,7 @@
 			children = (
 				37F4F86824969E130023E80C /* PiLights.entitlements */,
 				37F4F815249699B70023E80C /* main.swift */,
+				37193E8827C4D2A900068242 /* MQTTServer */,
 				3770C2FA24DFFCB6004C98E7 /* GoogleHomeServer */,
 				37DEBF37249AA3FA00BE520F /* AppServer */,
 				3744F22024980DEF00101719 /* HomeKitServer */,
@@ -256,6 +297,7 @@
 				37D4EC60249A61B600188627 /* Kitura */,
 				3770C30A24E006A4004C98E7 /* AnyCodable */,
 				37779A7B270C4A570039138A /* HAP */,
+				37193E8627C4D14A00068242 /* MQTTNIO */,
 			);
 			productName = PiLights;
 			productReference = 37F4F812249699B70023E80C /* PiLights */;
@@ -292,6 +334,7 @@
 				37D4EC5F249A61B600188627 /* XCRemoteSwiftPackageReference "kitura" */,
 				3770C30924E006A4004C98E7 /* XCRemoteSwiftPackageReference "AnyCodable" */,
 				37779A7A270C48F00039138A /* XCRemoteSwiftPackageReference "HAP" */,
+				37193E8527C4D14A00068242 /* XCRemoteSwiftPackageReference "mqtt-nio" */,
 			);
 			productRefGroup = 37F4F813249699B70023E80C /* Products */;
 			projectDirPath = "";
@@ -313,12 +356,15 @@
 				3744F22224980F4100101719 /* DeviceStatusPacket.swift in Sources */,
 				3770C30224E00121004C98E7 /* SyncResponse.swift in Sources */,
 				37F4F86F24969F8E0023E80C /* DeviceServer.swift in Sources */,
+				37193E9027C4E3BA00068242 /* ZBDevice.swift in Sources */,
 				37D4EC5C249A5C7F00188627 /* HKThermometer.swift in Sources */,
 				37F4F8BA2496B9CE0023E80C /* Packet.swift in Sources */,
 				37779A7E270C4B7C0039138A /* CO2Sensor.swift in Sources */,
+				37193E9227C4E50500068242 /* ZBDefinition.swift in Sources */,
 				3770C30024E0006C004C98E7 /* QueryDevice.swift in Sources */,
 				3770C30D24E058F2004C98E7 /* AppServer.swift in Sources */,
 				3770C30F24E0592B004C98E7 /* GoogleHomeServer.swift in Sources */,
+				37193E8A27C4D2B800068242 /* MQTTServer.swift in Sources */,
 				37F4F86A24969E3F0023E80C /* DimmableLight.swift in Sources */,
 				3770C30624E0049C004C98E7 /* ExecuteResponse.swift in Sources */,
 				3770C2FC24DFFCC8004C98E7 /* GoogleResponse.swift in Sources */,
@@ -329,10 +375,12 @@
 				37ABE1E8270B8C2C00154355 /* HKCO2Sensor.swift in Sources */,
 				37D4EC58249A578600188627 /* Beacon.swift in Sources */,
 				3762D02E24E19E8300DD48B1 /* InputBody.swift in Sources */,
+				37193E9627C4F51200068242 /* ZBAccessory.swift in Sources */,
 				376494C52498082C0010FFDF /* Room.swift in Sources */,
 				373EEBE324980BCC00A8D7C1 /* HKDimmableLight.swift in Sources */,
 				3773ABAF24FEC42D00C7767F /* Light.swift in Sources */,
 				376494C22497DBEA0010FFDF /* SQLiteStorage.swift in Sources */,
+				37193E9427C4F02300068242 /* ZBFeature.swift in Sources */,
 				37F4F8BC2496C4B70023E80C /* RegisterDevicePacket.swift in Sources */,
 				3744F26A2498141E00101719 /* HomeKitServer.swift in Sources */,
 				37F4F8712496B1E80023E80C /* Device.swift in Sources */,
@@ -513,6 +561,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		37193E8527C4D14A00068242 /* XCRemoteSwiftPackageReference "mqtt-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adam-fowler/mqtt-nio";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
@@ -564,6 +620,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		37193E8627C4D14A00068242 /* MQTTNIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37193E8527C4D14A00068242 /* XCRemoteSwiftPackageReference "mqtt-nio" */;
+			productName = MQTTNIO;
+		};
 		376494BF2497D9EF0010FFDF /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 376494BE2497D9EF0010FFDF /* XCRemoteSwiftPackageReference "SQLite" */;
