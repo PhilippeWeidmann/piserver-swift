@@ -9,14 +9,14 @@
 import Foundation
 import HAP
 
-protocol TypeErasedcCharacteristic {}
+protocol TypeErasedCharacteristic {}
 
-extension GenericCharacteristic: TypeErasedcCharacteristic {}
+extension GenericCharacteristic: TypeErasedCharacteristic {}
 
 class ZBAccessory: Accessory {
     var zbDevice: ZBDevice
     private var exposedFeatures = [FeatureName: Feature]()
-    private var exposedCharacteristics = [FeatureName: TypeErasedcCharacteristic]()
+    private var exposedCharacteristics = [FeatureName: TypeErasedCharacteristic]()
 
     init?(zbDevice: ZBDevice) {
         self.zbDevice = zbDevice
